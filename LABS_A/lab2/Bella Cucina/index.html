@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bella Cucina</title>
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.css"/>
+</head>
+<body>
+<nav id="navbar-example2" class="navbar px-5" >
+    <a class="navbar-brand ps-5 text-warning fw-bolder" href="#" >Bella Cucina</a>
+    <div>
+        <ul class="nav nav-pills pe-5">
+            <li class="nav-item " >
+                <a class="nav-link active text-black" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reservations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div style="background-size: cover; height: 30vh; background-color: #284663" >
+    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 30vh">
+        <h1 class="text-white fw-bold mb-3">Welcome to Bella Cucina</h1>
+        <p class="text-white mb-4">Authentic Italian cuisine made with love, tradition, and the freshest ingredients</p>
+        <button type="button" class="btn btn-warning fw-bold">Explore Our Menu</button>
+    </div>
+</div>
+<div class="container py-5">
+    <h2 class="fw-bold text-center mb-4">Our Signature Dishes</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="pasta1.png" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Pasta Carbonara</h5>
+                    <p class="card-text">
+                        A Roman classic with creamy egg sauce, crispy pancetta, and freshly grated Pecorino Romano cheese.
+                    </p>
+                    <p class="text-warning fw-bold">$18.99</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="pizza2.png" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Margherita Pizza</h5>
+                    <p class="card-text">
+                        Wood-fried pizza with San Marzano tomatoes, fresh mozzarella, basil, and extra virgin olive oil.
+                    </p>
+                    <p class="text-warning fw-bold">$15.99</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="tiramisu3.png" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Tiramisu</h5>
+                    <p class="card-text">
+                        Our signature dessert with layers of espresso-soaked ladyfingers, mascarpone cream and cocoa dusting.
+                    </p>
+                    <p class="text-warning fw-bold">$9.99</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-body-tertiary">
+<div class="container py-5">
+    <img src="image-2.png">
+    <div class="d-inline-block  px-3">
+        <h3 class="fw-bold"> Our Story</h3>
+        <p>StoryStoryStoryStoryStoryStoryStoryStoryStoryStoryStoryStory</p>
+        <p>StoryStoryStoryStoryStoryStoryStoryStoryStoryStoryStoryStory</p>
+        <p>StoryStoryStoryStoryStoryStoryStoryStoryStoryStoryStoryStory</p>
+        <button type="button" class="btn btn-primary bg-body-tertiary border-black text-black">Learn More</button>
+
+    </div>
+</div>
+</div>
+<div class="container py-5 ms-auto">
+    <h3 class="fw-bold">Make a Reservation</h3>
+    <div class="row g-3 mb-3">
+        <form class="row g-3 mb-3" >
+            <div class="col-md-5">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" placeholder="Your Name">
+            </div>
+            <div class="col-md-5">
+                <label for="exampleInputPassword1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="you@example.com">
+            </div>
+            <div class="col-md-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" placeholder="you@example.com">
+            </div>
+            <div class="col-md-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="time" class="form-control" id="time" placeholder="you@example.com">
+            </div>
+            <div class="col-md-3">
+                <label for="guests" class="form-label">Number of Guests</label>
+                <select class="form-select" id="guests">
+                    <option value="" disabled selected>Select...</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5+</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-check-label" for="exampleCheck1">Special Requests</label>
+                <textarea class="form-control" id="exampleCheck1" placeholder="Allergies, celebrations, seating preferences..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning " >Reserve Table</button>
+        </form>
+    </div>
+</div>
+<div style="background-size: cover; height: 30vh; background-color: #284663">
+    <div class="py-5 px-5" style="height: 30vh">
+        <div class="row">
+            <div class="ps-5 col-4">
+                <h4 class="text-warning fw-bolder "> Bella Cucina</h4>
+                <p class="text-white">Authentic Italian food. Authentic Italian food.</p>
+            </div>
+            <div class="col-4 d-flex flex-column">
+            <p class="fw-bolder text-white">Quick Links</p>
+            <a rel="#" class="text-warning">Home</a>
+            <a rel="#" class="text-warning">Menu</a>
+            <a rel="#" class="text-warning">Reservations</a>
+            <a rel="#" class="text-warning">Contact</a>
+        </div>
+            <div class="col-4 d-flex flex-column">
+                <p class="fw-bolder text-white">Contact Us</p>
+                <span class="text-white">123 Via Roma, Downtown</span>
+                <span class="text-white">1123-4567</span>
+                <span class="text-white">info@bellacucina.com</span>
+
+            </div>
+        </div>
+        <hr class="text-white">
+        <p class="text-white text-center">©	FINKI - DNICK 2026</p>
+    </div>
+</div>
+</body>
+</html>
