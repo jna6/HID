@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sweet Moments</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+
+</head>
+<body>
+<div class="" style="background-color: #e8dfe3">
+    <div class="container-fluid d-flex flex-column" id="banner">
+        <div class="position-relative">
+            <img src="restaurant_picture.png" class="img-fluid w-100" style="height: 60vh; object-fit: cover">
+            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                <h1 class="display-3 text-white ">Welcome to Sweet Moments</h1>
+                <p class="text-center text-white">Delicious pasties and cozy atmosphere await you.</p>
+                <p class="text-center text-white ">Enjoy our freshly baked treats made with love.</p>
+                <button class="btn btn-warning ">View Our Menu</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid  mt-5 p-5">
+        <h3 class=" text-center">Featured Products</h3>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <img src="chocolate-cake.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Chocolate cake</h5>
+                            <p class="card-text">Rich and moist chocolate cake topped with creamy chocolate frosting and
+                                fresh berries.</p>
+                            <p class="fw-bold">$4.99</p>
+                            <button class="btn btn-warning">Order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img src="croissant.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Croissant</h5>
+                            <p class="card-text">Buttery, flaky croissant baked to golden perfection with a light, airy
+                                texture.</p>
+                            <p class="fw-bold">$2.49</p>
+                            <button class="btn btn-warning">Order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img src="cheesecake.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cheesecake</h5>
+                            <p>Creamy, classic cheesecake with a graham cracker crust, topped with fresh berries.</p>
+                            <p class="fw-bold">$5.99</p>
+                            <button class="btn btn-warning">Order now</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="" style="background-color: #e2d9dd">
+        <div class="container py-5 d-flex">
+            <img src="about-us.png" style="height: 30vh; width: 50vh">
+            <div class="d-inline-block px-5 py-5 me-1">
+                <h3 class="">About Us</h3>
+                <p>At Sweet Moments, we're passionate about baking! Our cozy cafe is the perfect place to relax and indulge in delightful pastries and desserts. We use only the finest ingredients to bake our treats fresh daily. </p>
+                <button class="btn btn-warning">Learn more</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5 ">
+        <h3 class="fw-bold text-center">Make a Reservation</h3>
+        <div class="d">
+            <form class="row g-3 py-3  d-flex justify-content-center" >
+                <div class="col-md-5">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Your Name">
+                </div>
+                <div class="col-md-5">
+                    <label for="exampleInputPassword1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="you@example.com">
+                </div>
+                <div class="col-md-4">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" placeholder="you@example.com">
+                </div>
+                <div class="col-md-2">
+                    <label for="time" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="time" placeholder="you@example.com">
+                </div>
+                <div class="col-md-4">
+                    <label for="guests" class="form-label">Number of Guests</label>
+                    <select class="form-select" id="guests">
+                        <option value="" disabled selected>Select...</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5+</option>
+                    </select>
+                </div>
+                <div class="col-md-10">
+                    <label class="form-check-label" for="exampleCheck1">Special Requests</label>
+                    <textarea class="form-control" id="exampleCheck1" placeholder="Special Requests"></textarea>
+                </div>
+
+                <div class="col-md-10">
+                <button type="submit" class="btn btn-warning " >Book Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
