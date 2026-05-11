@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Movie</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</head>
+
+<body class="bg-black text-white">
+
+<nav class="navbar navbar-dark  border-bottom mb-2 border-warning">
+    <div class="container-fluid d-flex align-items-center">
+        <div class="d-flex flex-column">
+            <span class="navbar-brand fs-4 fw-bolder ms-2 text-warning">
+                THE FILM BOUTIQUE
+            </span>
+            <small class="text-warning text-white-50 ms-2">
+                PREMIUM CINEMA COLLECTION
+            </small>
+        </div>
+
+        <div class="d-flex ms-auto gap-5">
+            <a class="nav-link text-warning " href="{% url 'index' %}">
+                COLLECTION
+            </a>
+            <a class="nav-link text-warning me-2" href="{% url 'add_movie' %}">
+                + ADD MOVIE
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="container-fluid d-flex align-items-center border-start border-warning mb-4">
+
+            <div class="d-flex flex-column ">
+                 <h2 class="text-lg-start text-white ">ADD NEW MOVIE </h2>
+             </div>
+
+            <div class="d-flex ms-auto gap-5">
+                <a class="nav-link text-warning text-lg-end" href="{% url 'index' %}">
+                <-COLLECTION
+                </a>
+            </div>
+
+        </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="border border-light-subtle p-4 rounded bg-dark shadow">
+                <form method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <div class="mb-3 mt-2">
+                        {{ form.as_p }}
+                    </div>
+                    <button type="submit"
+                            class="btn btn-warning w-100 fw-bold">
+                        SAVE MOVIE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

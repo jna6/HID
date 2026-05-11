@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</head>
+<body class="bg-black">
+
+<nav class="navbar navbar-dark  border-bottom mb-2 border-warning">
+    <div class="container-fluid d-flex align-items-center">
+        <div class="d-flex flex-column">
+            <span class="navbar-brand fs-4 fw-bolder ms-2 text-warning">
+                THE FILM BOUTIQUE
+            </span>
+            <small class="text-warning text-white-50 ms-2">
+                PREMIUM CINEMA COLLECTION
+            </small>
+        </div>
+
+        <div class="d-flex ms-auto gap-5">
+            <a class="nav-link text-warning " href="{% url 'index' %}">
+                COLLECTION
+            </a>
+            <a class="nav-link text-warning me-2" href="{% url 'add_movie' %}">
+                + ADD MOVIE
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+        <div class="container-fluid d-flex align-items-center border-start border-warning mb-4">
+             <div class="d-flex flex-column ">
+                 <h2 class="text-lg-start text-white ">COLLECTION </h2>
+             </div>
+
+            <div class="d-flex ms-auto gap-5">
+                <a class="nav-link text-warning text-lg-end" href="{% url 'add_movie' %}">
+                + ADD MOVIE
+                </a>
+            </div>
+
+        </div>
+
+    <div class="row ">
+
+        {% for movie in movies %}
+        <div class="col-md-3 mb-4 ">
+            <div class="card h-100 shadow bg-dark">
+                <img src="{{ movie.poster.url }}"
+                     class="card-img-top"
+                     style="height:300px; object-fit:cover;">
+                <div class="card-body text-white">
+                    <h6>{{ movie.title }}</h6>
+
+                    <div class="d-flex ms-auto gap-2">
+                         <p class="text-white-50">
+                        {{ movie.year }}
+                        </p>
+                        <p>-</p>
+                        <p class="text-white-50">
+                        {{ movie.genre }}
+                        </p>
+                    </div>
+
+                    <p class="text-warning fw-bold">
+                        €{{ movie.rental_price }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
