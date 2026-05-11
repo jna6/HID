@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Property Details</title>
+
+    <link rel="stylesheet" href="{% static 'agency/bootstrap.css' %}"/>
+    <script src="{% static 'agency/bootstrap.bundle.js' %}"></script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg" style="background-color: #2b7a4a;">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <h3 class="m-3 text-white">NestFind</h3>
+        <p class="m-3 text-white-50">REAL ESTATE LISTINGS</p>
+    </div>
+</nav>
+<div class="container-fluid p-4" style="background-color: #23673f; color:white;">
+    <h1 class="">{{ property.title }}</h1>
+    <p class="text-white- badge rounded-pill bg-dark">
+        {{ property.property_type }}
+    </p>
+</div>
+<div class="container mt-5">
+
+    <div class="row shadow p-4">
+
+        <div class="col-md-6">
+
+            <img src="{{ property.image.url }}"
+                 class="img-fluid rounded">
+
+        </div>
+
+        <div class="col-md-6">
+
+            <p><strong>Agency:</strong> {{ property.agency }}</p>
+            <p><strong>Type:</strong> {{ property.property_type }}</p>
+            <p><strong>Status:</strong> {{ property.status }}</p>
+            <p><strong>Location:</strong> {{ property.location }}</p>
+            <p><strong>Area:</strong> {{ property.area }} m²</p>
+            <p><strong>Rooms:</strong> {{ property.rooms }}</p>
+            <p><strong>Floor:</strong> {{ property.floor }}</p>
+            <p><strong>Year Built:</strong> {{ property.build_year }}</p>
+
+            <p class="fs-3 fw-bold text-success">
+                {{ property.price }} €
+            </p>
+
+            <a href="/index/" class="btn btn-light">Back</a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
