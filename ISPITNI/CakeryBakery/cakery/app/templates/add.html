@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cakery Bakery</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg shadow-sm" style="background-color: #f6f6f6">
+    <div class="container-fluid px-5">
+        <a class="navbar-brand text-danger ms-5" href="#">Cakery&amp;Bakery</a>
+        <div class="ms-auto me-5">
+            <a class="nav-link d-inline text-black-50 pe-3" href="{% url 'indexç' %}">Home</a>
+            <a class="nav-link d-inline text-black-50 pe-3" href="#">About</a>
+            <a class="nav-link d-inline text-dark pe-3" href="#" >Add</a>
+            <a class="nav-link d-inline text-black-50" href="#">Pricing</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid px-5 py-5">
+    <div class="py-5 px-5" style=" background-color: #f6f6f6">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h3 class="text-center text-danger fw-bold">Add new cake</h3>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-danger w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-danger mt-auto text-white px-5 py-3 d-flex justify-content-between align-items-center">
+    <p class="ps-5 m-0">Copyright &copy; HCI 2025</p>
+    <p class="m-0 pe-5"><u>Privacy</u> <u>Terms</u> <u>Add</u></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cakery Bakery</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg shadow-sm" style="background-color: #f6f6f6">
+    <div class="container-fluid px-5">
+        <a class="navbar-brand text-danger ms-5" href="#">Cakery&amp;Bakery</a>
+        <div class="ms-auto me-5">
+            <a class="nav-link d-inline text-black-50 pe-3" href="#">Home</a>
+            <a class="nav-link d-inline text-black-50 pe-3" href="#">About</a>
+            <a class="nav-link d-inline text-dark pe-3" href="{% url 'add' %}" >Add</a>
+            <a class="nav-link d-inline text-black-50" href="#">Pricing</a>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid bg-danger px-5 py-4">
+    <div class="row align-items-center mt-3 mb-3">
+        <div class="col-7">
+            <div class="ms-5">
+                <h1 class="text-white fw-lighter " style="font-size: 3.9rem">Explore the wonderland of tastes!</h1>
+                <p class="text-white-50">Assignment for HCI Exam in January 2025</p>
+                <div class="">
+                    <button class="btn bg-white">Get Started</button>
+                    <button class="btn rounded-1 border-1 border-white text-white" style="margin-left: 20px">Learn More</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 d-flex justify-content-center mt-3 mb-3">
+            <img class="w-100 rounded pe-5" src="{% static 'Screenshot_1.png' %}" alt="">
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-center p-5" style="background-color: #eee">
+    <div class="col-5 mx-auto">
+        <p style="font-size: 1.2rem">"Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Consequatur corporis doloribus facere laudantium provident repudiandae sint temporibus! Assumenda error et, incidunt maxime nobis obcaecati."
+        </p>
+        <div class="">
+            <img width="30" src="{% static 'avatar.png' %}" class="mb-1">
+            <b>John Doe / CEO, Cakery&Bakery</b>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-5 py-5" >
+    <h3 class="text-danger text-center fw-bold">Products</h3>
+    <p class="text-center">Add more products in the edit form!</p>
+    <div class="row g-4 ms-5 me-5 pt-5">
+        {% for cake in cakes %}
+        <div class="col-4 ">
+            <div class="card shadow-lg">
+                <img class="card-img-top object-fit-cover" src="{{ cake.image.url }}" height="350">
+                <div class="card-body">
+                    <h5>{{ cake.name }}</h5>
+                    <p>{{ cake.description }}</p>
+                    <div class="d-flex  align-items-center ">
+                        <img src="{% static 'avatar.png' %}" >
+                        <span class="ps-2">{{ cake.baker.name }} {{ cake.baker.surname }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<footer class="bg-danger mt-auto text-white px-5 py-3 d-flex justify-content-between align-items-center">
+    <p class="ps-5 m-0">Copyright &copy; HCI 2025</p>
+    <p class="m-0 pe-5"><u>Privacy</u> <u>Terms</u> <u>Add</u></p>
+</footer>
+</body>
+</html>
