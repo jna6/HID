@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Doctors System</title>
+    <link rel="stylesheet" href="{%  static 'bootstrap/css/bootstrap.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %} }"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="/">Hospital Doctors System</a>
+    </div>
+</nav>
+
+<section class="container py-5 bg-success text-white text-center">
+    <div class="">
+        <h1 class="display-4">{{ doctor.full_name }}</h1>
+        <p class="lead">Specialty: {{ doctor.get_specialty_display }} | Institution: {{ doctor.institution }}</p>
+        <p>Email: {{ doctor.email }} | Phone: {{ doctor.phone }}</p>
+    </div>
+</section>
+
+<section class="container py-5 bg-light">
+    <div class="">
+        <h2 class="mb-4 text-center">Appointments Overview</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="text-center">Past Appointments</h4>
+                {% for appt in past_appointments %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ appt.get_appointment_type_display }}</h5>
+                        <p class="card-text">{{ appt.description }}</p>
+                        <p class="text-muted">Date: {{ appt.datetime }}</p>
+                        <p class="text-muted">Patient: {{ appt.patient.full_name }}</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center">No past appointments.</p>
+                {% endfor %}
+            </div>
+
+            <div class="col-md-4">
+                <h4 class="text-center">Today's Appointments</h4>
+                {% for appt in today_appointments %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ appt.get_appointment_type_display }}</h5>
+                        <p class="card-text">{{ appt.description }}</p>
+                        <p class="text-muted">Time: {{ appt.datetime|time }}</p>
+                        <p class="text-muted">Patient: {{ appt.patient.full_name }}</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center">No appointments today.</p>
+                {% endfor %}
+            </div>
+
+            <div class="col-md-4">
+                <h4 class="text-center">Future Appointments</h4>
+                {% for appt in future_appointments %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ appt.get_appointment_type_display }}</h5>
+                        <p class="card-text">{{ appt.description }}</p>
+                        <p class="text-muted">Scheduled for: {{ appt.datetime }}</p>
+                        <p class="text-muted">Patient: {{ appt.patient.full_name }}</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center">No upcoming appointments.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container py-5 bg-white">
+    <div class="">
+        <h2 class="mb-4 text-center">Add a New Appointment</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form method="post" class="p-4 bg-light rounded shadow">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Create Appointment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="text-center p-3 bg-dark text-white">
+        © Hospital Doctors System
+    </div>
+</footer>
+</body>
+</html>
